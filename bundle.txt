@@ -1,0 +1,14 @@
+
+Użyte pakiety:
+
+Faker - generowanie danych (zaślepek)
+https://packagist.org/packages/fzaninotto/faker
+https://github.com/fzaninotto/Faker
+
+number-to-words - konwerter liczb na słowa z obsługą języka polskiego
+https://packagist.org/packages/kwn/number-to-words
+https://github.com/kwn/number-to-words
+
+mpdf - make pdf
+https://packagist.org/packages/mpdf/mpdf
+https://github.com/mpdf/mpdf
