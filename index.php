@@ -1,7 +1,5 @@
 <?php
-
 include 'includes/visits.php';
-
 ?>
 
 <!doctype html>
@@ -15,5 +13,11 @@ include 'includes/visits.php';
         <title>Flights reservations</title>
     </head>
     <body>
+
+<?php
+include 'includes/form.php';
+?>
+
+
     </body>
 </html>
