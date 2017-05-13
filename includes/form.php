@@ -1,7 +1,3 @@
-<?php
-include "airports.php";
-?>
-
 
 <form action="pdf.php" method="POST">
     <br>
@@ -11,7 +7,7 @@ include "airports.php";
         </option>
         <?php
         for ($i = 0; $i < count($airports); $i++) {
-            echo "<option>" . $airports[$i]['name'] . "</option>";
+            echo "<option value=\"" . $airports[$i]['code'] . "\">" . $airports[$i]['name'] . "</option>";
         }
         ?>
     </select>
@@ -23,13 +19,13 @@ include "airports.php";
         </option>
         <?php
         for ($j = 0; $j < count($airports); $j++) {
-            echo "<option>" . $airports[$j]['name'] . "</option>";
+            echo "<option value=\"" . $airports[$i]['code'] . "\">" . $airports[$j]['name'] . "</option>";
         }
         ?>
     </select>
     <br/><br/>
 
-    <label> Czas odlotu: <br/>
+    <label> Czas wylotu: <br/>
         <input type="datetime-local" name="localDepartureTime" placeholder="DD-MM-YYYY  hh:mm:ss" size="40">
     </label>
     <br/><br/>

@@ -1,5 +1,6 @@
 <?php
 include 'includes/visits.php';
+include 'includes/airports.php';
 ?>
 
 <!doctype html>
