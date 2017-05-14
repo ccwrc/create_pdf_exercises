@@ -26,11 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $dateDeparture->format('d.m.Y H:i:s');
         var_dump($dateDeparture);
         $dateArrival = new DateTime();
-        $dateArrival->setTimezone($arrivalTimezone);
+        $dateArrival->setTimezone($departureTimezone);
         $dateArrival->modify($localTime . "+" . $flightTime . "hours");
+        $dateArrival->setTimezone($arrivalTimezone);
         $dateArrival->format('d.m.Y H:i:s');
+
         var_dump($dateArrival);
-        
         
         
         
