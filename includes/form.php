@@ -18,6 +18,9 @@
             Lotnisko przylotu:
         </option>
         <?php
+        /*  'name'     => 'Chicago Rockford International Airport',
+            'code'     => 'RFD',
+            'timezone' => 'America/Chicago', */
         for ($j = 0; $j < count($airports); $j++) {
             echo "<option value=\"" . $airports[$i]['code'] . "\">" . $airports[$j]['name'] . "</option>";
         }

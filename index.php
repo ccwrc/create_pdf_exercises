@@ -1,6 +1,9 @@
 <?php
 include 'includes/visits.php';
 include 'includes/airports.php';
+/*  'name'     => 'Chicago Rockford International Airport',
+    'code'     => 'RFD',
+    'timezone' => 'America/Chicago', */
 ?>
 
 <!doctype html>
@@ -15,9 +18,9 @@ include 'includes/airports.php';
     </head>
     <body>
 
-<?php
-include 'includes/form.php';
-?>
+        <?php
+        include 'includes/form.php';
+        ?>
 
 
     </body>
