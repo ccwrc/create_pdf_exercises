@@ -7,7 +7,7 @@
         </option>
         <?php
         for ($i = 0; $i < count($airports); $i++) {
-            echo "<option value=\"" . $airports[$i]['code'] . "\">" . $airports[$i]['name'] . "</option>";
+            echo "<option value=\"" . $i . "\">" . $airports[$i]['name'] . "</option>";
         }
         ?>
     </select>
@@ -21,8 +21,8 @@
         /*  'name'     => 'Chicago Rockford International Airport',
             'code'     => 'RFD',
             'timezone' => 'America/Chicago', */
-        for ($j = 0; $j < count($airports); $j++) {
-            echo "<option value=\"" . $airports[$i]['code'] . "\">" . $airports[$j]['name'] . "</option>";
+        for ($i = 0; $i < count($airports); $i++) {
+            echo "<option value=\"" . $i . "\">" . $airports[$i]['name'] . "</option>";
         }
         ?>
     </select>
