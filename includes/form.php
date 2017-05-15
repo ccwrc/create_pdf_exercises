@@ -1,6 +1,7 @@
 
 <form action="pdf.php" method="POST">
-    <br>
+    
+    <br/>
     <select name="departure">
         <option>
             Lotnisko wylotu: 
@@ -15,12 +16,9 @@
 
     <select name="arrival">
         <option>
-            Lotnisko przylotu:
+            Lotnisko docelowe:
         </option>
         <?php
-        /*  'name'     => 'Chicago Rockford International Airport',
-            'code'     => 'RFD',
-            'timezone' => 'America/Chicago', */
         for ($i = 0; $i < count($airports); $i++) {
             echo "<option value=\"" . $i . "\">" . $airports[$i]['name'] . "</option>";
         }
@@ -29,7 +27,7 @@
     <br/><br/>
 
     <label> Czas wylotu: <br/>
-        <input type="datetime-local" name="localDepartureTime" placeholder="DD-MM-YYYY  hh:mm:ss" size="40">
+        <input type="datetime-local" name="localDepartureTime" placeholder="DD-MM-RRRR  gg:mm:ss">
     </label>
     <br/><br/>
 

@@ -1,7 +1,7 @@
 <?php
 
 require_once './vendor/autoload.php';
-include 'includes/airports.php';
+require_once 'includes/airports.php';
 use NumberToWords\NumberToWords;
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $localTime = $_POST['localDepartureTime'];
         $flightTime = $_POST['length'];
         $price = new NumberToWords();
-        $displayPrice = $price->getCurrencyTransformer('pl');
-        $displayPrice = $displayPrice->toWords($_POST['price'] * 100, 'PLN');
+        $currTrans = $price->getCurrencyTransformer('pl');
+        $displayPrice = $currTrans->toWords($_POST['price'] * 100, 'PLN');
 
         $dateDeparture = new DateTime();
         $dateDeparture->setTimezone($departureTimezone);
@@ -45,15 +45,15 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $displayReservation = "
         <html>
             <body>   
-                <table>
+                <table border=\"1\">
                     <tr>
                         <td>Lotnisko wylotu</td>
                         <td>Czas wylotu</td>
                         <td>Kod lotniska </td>
-                        <td>Lotnisko przylotu</td>
-                        <td>Lokalny czas przybycia</td>
+                        <td>Lotnisko docelowe</td>
+                        <td>Czas przybycia (wg. docelowej strefy czasowej)</td>
                         <td>Kod lotniska</td>
-                        <td>Czas lotu (godziny)</td>
+                        <td>Czas lotu</td>
                         <td>Cena lotu</td>
                     </tr>
 
@@ -64,24 +64,27 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         <td>$arrivalName</td>
                         <td>$displayDateArrival</td>
                         <td>$arrivalCode</td>
-                        <td>$flightTime</td>
+                        <td>godzin: $flightTime</td>
                         <td>$displayPrice</td>
                     </tr>
                 </table> 
                 
                 <br/>
                 Imię: $name <br/>
-                Nazwisko: $surname <br/>
+                Nazwisko: $surname <br/><br/><br/>
+                    
+                <center><img src=\"img/airlinesLogo.jpg\"></center>
             </body>
         </html>
         ";
         
-        // https://mpdf.github.io/
         $mpdf = new mPDF();
         $mpdf->WriteHTML($displayReservation);
-        // https://mpdf.github.io/reference/mpdf-functions/output.html
-        $mpdf->Output("zwykla_nazwa.pdf", "D");
+        $mpdf->Output("twoja_rezerwacja.pdf", "D");
 
+    } else {
+        echo "Nie wypełniłeś poprawnie formularza <br/><br/>";
+        echo "<a href=\"index.php\">Wróć do poprzedniej strony</a>";
     }
 }
 
