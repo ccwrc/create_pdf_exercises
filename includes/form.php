@@ -1,6 +1,6 @@
 
 <form action="pdf.php" method="POST">
-    
+
     <br/>
     <select name="departure">
         <option>
